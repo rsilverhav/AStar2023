@@ -185,6 +185,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/TerminalMapRenderer.o: src/TerminalMapRenderer.cpp.o
+.PHONY : src/TerminalMapRenderer.o
+
+# target to build an object file
+src/TerminalMapRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/TerminalMapRenderer.cpp.o
+.PHONY : src/TerminalMapRenderer.cpp.o
+
+src/TerminalMapRenderer.i: src/TerminalMapRenderer.cpp.i
+.PHONY : src/TerminalMapRenderer.i
+
+# target to preprocess a source file
+src/TerminalMapRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/TerminalMapRenderer.cpp.i
+.PHONY : src/TerminalMapRenderer.cpp.i
+
+src/TerminalMapRenderer.s: src/TerminalMapRenderer.cpp.s
+.PHONY : src/TerminalMapRenderer.s
+
+# target to generate assembly for a file
+src/TerminalMapRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/TerminalMapRenderer.cpp.s
+.PHONY : src/TerminalMapRenderer.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -223,6 +247,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... main"
+	@echo "... src/TerminalMapRenderer.o"
+	@echo "... src/TerminalMapRenderer.i"
+	@echo "... src/TerminalMapRenderer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -7,7 +7,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project(main)
 
 include_directories(${PROJECT_SOURCE_DIR}/inc)
-file(GLOB a_start_SRC CONFIGURE_DEPENDS "*.h" "src/*.cpp")
+file(GLOB a_star_SRC CONFIGURE_DEPENDS "*.h" "src/*.cpp")
 
 add_executable(main src/main.cpp ${a_star_SRC})
 
