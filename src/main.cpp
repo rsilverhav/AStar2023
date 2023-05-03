@@ -15,6 +15,9 @@ int main() {
       map.at(y).push_back(0);
     }
   }
+  map[3][3] = 1;
+  map[4][3] = 1;
+  map[5][3] = 1;
 
   std::unique_ptr<MapRenderer> mapRenderer =
       std::make_unique<TerminalMapRenderer>();

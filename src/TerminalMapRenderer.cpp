@@ -11,8 +11,10 @@ void TerminalMapRenderer::renderMap(const std::vector<std::vector<int>> &map) {
       switch (col) {
       case 1:
         std::cout << "#";
+        break;
       default:
         std::cout << " ";
+        break;
       }
     }
     std::cout << "|\n";
