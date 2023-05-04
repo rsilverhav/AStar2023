@@ -10,6 +10,5 @@ public:
   PathNode(int _x, int _y) : x(_x), y(_y) {}
   PathNode(int _x, int _y, std::shared_ptr<PathNode> _previousNode)
       : x(_x), y(_y), previousNode(_previousNode) {}
-  std::string getKey();
 };
 #endif

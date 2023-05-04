@@ -1,5 +1,6 @@
 #include "TerminalMapRenderer.h"
 #include "PathNode.h"
+#include "getKey.h"
 #include <memory>
 #include <string>
 #include <unordered_set>
@@ -10,7 +11,7 @@ void TerminalMapRenderer::renderMap(const std::vector<std::vector<int>> &map,
   std::unordered_set<std::string> pathNodes;
   auto currentNode = path;
   do {
-    pathNodes.insert(currentNode->getKey());
+    pathNodes.insert(getKey(currentNode->x, currentNode->y));
     currentNode = currentNode->previousNode;
   } while (currentNode);
 
@@ -23,11 +24,9 @@ void TerminalMapRenderer::renderMap(const std::vector<std::vector<int>> &map,
     std::cout << "|";
     for (int x = 0; x < map[y].size(); x++) {
       auto col = map[y][x];
-      // TODO: this is bad, should not derive the key in two different places
-      std::string key = std::to_string(x) + "," + std::to_string(y);
       if (col == 1) {
         std::cout << "#";
-      } else if (pathNodes.find(key) != pathNodes.end()) {
+      } else if (pathNodes.find(getKey(x, y)) != pathNodes.end()) {
         std::cout << ".";
       } else {
         std::cout << " ";
