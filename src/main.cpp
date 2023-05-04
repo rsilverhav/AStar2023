@@ -1,4 +1,5 @@
 #include "MapRenderer.h"
+#include "PathFinder.h"
 #include "PathNode.h"
 #include "TerminalMapRenderer.h"
 #include <iostream>
@@ -24,9 +25,9 @@ int main() {
   std::unique_ptr<MapRenderer> mapRenderer =
       std::make_unique<TerminalMapRenderer>();
 
-  auto node = std::make_shared<PathNode>(1, 3);
-  auto nodeNext = std::make_shared<PathNode>(2, 3, node);
-  auto nodeThird = std::make_shared<PathNode>(2, 4, nodeNext);
+  PathFinder pathFinder{};
 
-  mapRenderer->renderMap(map, nodeThird);
+  auto path = pathFinder.findShortestPath({1, 3}, {6, 4});
+
+  mapRenderer->renderMap(map, path);
 }

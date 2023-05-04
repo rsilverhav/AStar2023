@@ -185,6 +185,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/PathFinder.o: src/PathFinder.cpp.o
+.PHONY : src/PathFinder.o
+
+# target to build an object file
+src/PathFinder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/PathFinder.cpp.o
+.PHONY : src/PathFinder.cpp.o
+
+src/PathFinder.i: src/PathFinder.cpp.i
+.PHONY : src/PathFinder.i
+
+# target to preprocess a source file
+src/PathFinder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/PathFinder.cpp.i
+.PHONY : src/PathFinder.cpp.i
+
+src/PathFinder.s: src/PathFinder.cpp.s
+.PHONY : src/PathFinder.s
+
+# target to generate assembly for a file
+src/PathFinder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/PathFinder.cpp.s
+.PHONY : src/PathFinder.cpp.s
+
 src/PathNode.o: src/PathNode.cpp.o
 .PHONY : src/PathNode.o
 
@@ -208,6 +232,30 @@ src/PathNode.s: src/PathNode.cpp.s
 src/PathNode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/PathNode.cpp.s
 .PHONY : src/PathNode.cpp.s
+
+src/Point.o: src/Point.cpp.o
+.PHONY : src/Point.o
+
+# target to build an object file
+src/Point.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Point.cpp.o
+.PHONY : src/Point.cpp.o
+
+src/Point.i: src/Point.cpp.i
+.PHONY : src/Point.i
+
+# target to preprocess a source file
+src/Point.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Point.cpp.i
+.PHONY : src/Point.cpp.i
+
+src/Point.s: src/Point.cpp.s
+.PHONY : src/Point.s
+
+# target to generate assembly for a file
+src/Point.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Point.cpp.s
+.PHONY : src/Point.cpp.s
 
 src/TerminalMapRenderer.o: src/TerminalMapRenderer.cpp.o
 .PHONY : src/TerminalMapRenderer.o
@@ -295,9 +343,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... main"
+	@echo "... src/PathFinder.o"
+	@echo "... src/PathFinder.i"
+	@echo "... src/PathFinder.s"
 	@echo "... src/PathNode.o"
 	@echo "... src/PathNode.i"
 	@echo "... src/PathNode.s"
+	@echo "... src/Point.o"
+	@echo "... src/Point.i"
+	@echo "... src/Point.s"
 	@echo "... src/TerminalMapRenderer.o"
 	@echo "... src/TerminalMapRenderer.i"
 	@echo "... src/TerminalMapRenderer.s"
