@@ -24,10 +24,10 @@ void TerminalMapRenderer::renderMap(const std::vector<std::vector<int>> &map,
     std::cout << "|";
     for (int x = 0; x < map[y].size(); x++) {
       auto col = map[y][x];
-      if (col == 1) {
-        std::cout << "#";
-      } else if (pathNodes.find(getKey(x, y)) != pathNodes.end()) {
+      if (pathNodes.find(getKey(x, y)) != pathNodes.end()) {
         std::cout << ".";
+      } else if (col == 1) {
+        std::cout << "#";
       } else {
         std::cout << " ";
       }
