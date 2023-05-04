@@ -1,6 +1,8 @@
 #include "MapRenderer.h"
+#include "PathNode.h"
 #include "TerminalMapRenderer.h"
 #include <iostream>
+#include <memory>
 #include <vector>
 
 const int width = 10;
@@ -22,5 +24,9 @@ int main() {
   std::unique_ptr<MapRenderer> mapRenderer =
       std::make_unique<TerminalMapRenderer>();
 
-  mapRenderer->renderMap(map);
+  auto node = std::make_shared<PathNode>(1, 3);
+  auto nodeNext = std::make_shared<PathNode>(2, 3, node);
+  auto nodeThird = std::make_shared<PathNode>(2, 4, nodeNext);
+
+  mapRenderer->renderMap(map, nodeThird);
 }

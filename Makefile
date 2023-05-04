@@ -185,6 +185,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/PathNode.o: src/PathNode.cpp.o
+.PHONY : src/PathNode.o
+
+# target to build an object file
+src/PathNode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/PathNode.cpp.o
+.PHONY : src/PathNode.cpp.o
+
+src/PathNode.i: src/PathNode.cpp.i
+.PHONY : src/PathNode.i
+
+# target to preprocess a source file
+src/PathNode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/PathNode.cpp.i
+.PHONY : src/PathNode.cpp.i
+
+src/PathNode.s: src/PathNode.cpp.s
+.PHONY : src/PathNode.s
+
+# target to generate assembly for a file
+src/PathNode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/PathNode.cpp.s
+.PHONY : src/PathNode.cpp.s
+
 src/TerminalMapRenderer.o: src/TerminalMapRenderer.cpp.o
 .PHONY : src/TerminalMapRenderer.o
 
@@ -247,6 +271,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... main"
+	@echo "... src/PathNode.o"
+	@echo "... src/PathNode.i"
+	@echo "... src/PathNode.s"
 	@echo "... src/TerminalMapRenderer.o"
 	@echo "... src/TerminalMapRenderer.i"
 	@echo "... src/TerminalMapRenderer.s"
