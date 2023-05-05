@@ -185,6 +185,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/GameMap.o: src/GameMap.cpp.o
+.PHONY : src/GameMap.o
+
+# target to build an object file
+src/GameMap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GameMap.cpp.o
+.PHONY : src/GameMap.cpp.o
+
+src/GameMap.i: src/GameMap.cpp.i
+.PHONY : src/GameMap.i
+
+# target to preprocess a source file
+src/GameMap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GameMap.cpp.i
+.PHONY : src/GameMap.cpp.i
+
+src/GameMap.s: src/GameMap.cpp.s
+.PHONY : src/GameMap.s
+
+# target to generate assembly for a file
+src/GameMap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GameMap.cpp.s
+.PHONY : src/GameMap.cpp.s
+
 src/PathFinder.o: src/PathFinder.cpp.o
 .PHONY : src/PathFinder.o
 
@@ -343,6 +367,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... main"
+	@echo "... src/GameMap.o"
+	@echo "... src/GameMap.i"
+	@echo "... src/GameMap.s"
 	@echo "... src/PathFinder.o"
 	@echo "... src/PathFinder.i"
 	@echo "... src/PathFinder.s"
