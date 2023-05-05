@@ -11,7 +11,11 @@ const int width = 10;
 const int height = 10;
 
 int main() {
-  auto map = GameMap(width, height);
+  auto gameMap = GameMap(width, height);
+
+  gameMap.setTileType({3, 3}, MapTileType::wall);
+  gameMap.setTileType({3, 4}, MapTileType::wall);
+  gameMap.setTileType({3, 5}, MapTileType::wall);
 
   std::unique_ptr<MapRenderer> mapRenderer =
       std::make_unique<TerminalMapRenderer>();
@@ -19,5 +23,5 @@ int main() {
   PathFinder pathFinder{};
 
   auto path = pathFinder.findShortestPath({1, 3}, {6, 4});
-  // mapRenderer->renderMap(map, path);
+  mapRenderer->renderMap(gameMap, path);
 }

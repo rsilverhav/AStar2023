@@ -11,6 +11,10 @@ GameMap::GameMap(int _width, int _height) : width(_width), height(_height) {
   }
 }
 
-MapTileType GameMap::getTileType(const Point &point) {
+MapTileType GameMap::getTileType(const Point &point) const {
   return mapData.at(point.y).at(point.x);
+}
+
+void GameMap::setTileType(const Point &point, MapTileType tileType) {
+  mapData[point.y][point.x] = tileType;
 }

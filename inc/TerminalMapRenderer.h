@@ -1,6 +1,7 @@
 #ifndef TERMINAL_MAP_RENDERER_H
 #define TERMINAL_MAP_RENDERER_H
 
+#include "GameMap.h"
 #include "MapRenderer.h"
 #include "PathNode.h"
 #include <iostream>
@@ -10,7 +11,7 @@ class TerminalMapRenderer : public MapRenderer {
 public:
   TerminalMapRenderer(){};
 
-  void renderMap(const std::vector<std::vector<int>> &map,
+  void renderMap(const GameMap &gameMap,
                  std::shared_ptr<PathNode> path) override;
 };
 

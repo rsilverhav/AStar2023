@@ -13,7 +13,8 @@ private:
 public:
   int width, height;
   GameMap(int _width, int _height);
-  MapTileType getTileType(const Point &point);
+  MapTileType getTileType(const Point &point) const;
+  void setTileType(const Point &, MapTileType);
 };
 
 #endif

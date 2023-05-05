@@ -1,11 +1,12 @@
 #include "TerminalMapRenderer.h"
+#include "GameMap.h"
 #include "PathNode.h"
 #include "getKey.h"
 #include <memory>
 #include <string>
 #include <unordered_set>
 
-void TerminalMapRenderer::renderMap(const std::vector<std::vector<int>> &map,
+void TerminalMapRenderer::renderMap(const GameMap &gameMap,
                                     std::shared_ptr<PathNode> path) {
 
   std::unordered_set<std::string> pathNodes;
@@ -15,18 +16,18 @@ void TerminalMapRenderer::renderMap(const std::vector<std::vector<int>> &map,
     currentNode = currentNode->previousNode;
   } while (currentNode);
 
-  for (int i = 0; i < map.at(0).size() + 2; i++) {
+  for (int i = 0; i < gameMap.width + 2; i++) {
     std::cout << "-";
   }
 
   std::cout << "\n";
-  for (int y = 0; y < map[0].size(); y++) {
+  for (int y = 0; y < gameMap.height; y++) {
     std::cout << "|";
-    for (int x = 0; x < map[y].size(); x++) {
-      auto col = map[y][x];
+    for (int x = 0; x < gameMap.width; x++) {
+      auto col = gameMap.getTileType({x, y});
       if (pathNodes.find(getKey(x, y)) != pathNodes.end()) {
         std::cout << ".";
-      } else if (col == 1) {
+      } else if (col == MapTileType::wall) {
         std::cout << "#";
       } else {
         std::cout << " ";
@@ -34,7 +35,7 @@ void TerminalMapRenderer::renderMap(const std::vector<std::vector<int>> &map,
     }
     std::cout << "|\n";
   }
-  for (int i = 0; i < map.at(0).size() + 2; i++) {
+  for (int i = 0; i < gameMap.width + 2; i++) {
     std::cout << "-";
   }
   std::cout << "\n";
