@@ -12,8 +12,15 @@ int main() {
   auto gameMap = GameMap(width, height);
 
   gameMap.setTileType({3, 3}, MapTileType::wall);
+  gameMap.setTileType({4, 3}, MapTileType::wall);
+  gameMap.setTileType({5, 3}, MapTileType::wall);
+  gameMap.setTileType({6, 3}, MapTileType::wall);
+  gameMap.setTileType({7, 3}, MapTileType::wall);
   gameMap.setTileType({3, 4}, MapTileType::wall);
   gameMap.setTileType({3, 5}, MapTileType::wall);
+  gameMap.setTileType({4, 5}, MapTileType::wall);
+  gameMap.setTileType({4, 6}, MapTileType::wall);
+  gameMap.setTileType({5, 6}, MapTileType::wall);
 
   std::unique_ptr<MapRenderer> mapRenderer =
       std::make_unique<TerminalMapRenderer>();
