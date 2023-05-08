@@ -1,5 +1,6 @@
 #include "PathFinder.h"
 #include <iostream>
+#include <memory>
 #include <queue>
 #include <unordered_set>
 
@@ -22,10 +23,13 @@ std::shared_ptr<PathNode> PathFinder::findShortestPath(const Point &from,
 
   queue.push(startNode);
 
+  std::unordered_set<Point> visited;
+
   while (!queue.empty()) {
     auto current = queue.top();
     std::cout << "Current: " << current->x << ", " << current->y << "\n";
     queue.pop();
+    visited.insert(*current);
   }
 
   auto adjacentPoints = this->getAdjacentPoints(from);
