@@ -13,7 +13,7 @@ std::shared_ptr<PathNode> PathFinder::findShortestPath(const Point &from,
                                                        const GameMap &gameMap) {
 
   auto startNode = std::shared_ptr<PathNode>(
-      new PathNode({from.x, from.y}, to.getDistance(from)));
+      new PathNode({from.x, from.y}, 0.0f, to.getDistance(from)));
 
   auto cmp = [](std::shared_ptr<PathNode> left,
                 std::shared_ptr<PathNode> right) {
@@ -43,9 +43,11 @@ std::shared_ptr<PathNode> PathFinder::findShortestPath(const Point &from,
       auto mapTileType = gameMap.getTileType(adjacent);
       if (mapTileType == MapTileType::floor &&
           visited.find(adjacent) == visited.end()) {
+        float distanceFromStart =
+            current->distanceFromStart + adjacent.getDistance(*current);
         queue.push(std::shared_ptr<PathNode>(new PathNode(
-            {adjacent.x, adjacent.y},
-            from.getDistance(adjacent) + to.getDistance(adjacent), current)));
+            {adjacent.x, adjacent.y}, distanceFromStart,
+            distanceFromStart + to.getDistance(adjacent), current)));
       }
     }
   }
