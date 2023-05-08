@@ -305,30 +305,6 @@ src/TerminalMapRenderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/TerminalMapRenderer.cpp.s
 .PHONY : src/TerminalMapRenderer.cpp.s
 
-src/getKey.o: src/getKey.cpp.o
-.PHONY : src/getKey.o
-
-# target to build an object file
-src/getKey.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/getKey.cpp.o
-.PHONY : src/getKey.cpp.o
-
-src/getKey.i: src/getKey.cpp.i
-.PHONY : src/getKey.i
-
-# target to preprocess a source file
-src/getKey.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/getKey.cpp.i
-.PHONY : src/getKey.cpp.i
-
-src/getKey.s: src/getKey.cpp.s
-.PHONY : src/getKey.s
-
-# target to generate assembly for a file
-src/getKey.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/getKey.cpp.s
-.PHONY : src/getKey.cpp.s
-
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -382,9 +358,6 @@ help:
 	@echo "... src/TerminalMapRenderer.o"
 	@echo "... src/TerminalMapRenderer.i"
 	@echo "... src/TerminalMapRenderer.s"
-	@echo "... src/getKey.o"
-	@echo "... src/getKey.i"
-	@echo "... src/getKey.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

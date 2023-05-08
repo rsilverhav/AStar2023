@@ -34,11 +34,5 @@
   "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/robinsilverhav/dev/cpp/AStar2023/inc -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -o CMakeFiles/main.dir/src/TerminalMapRenderer.cpp.o -c /Users/robinsilverhav/dev/cpp/AStar2023/src/TerminalMapRenderer.cpp",
   "file": "/Users/robinsilverhav/dev/cpp/AStar2023/src/TerminalMapRenderer.cpp",
   "output": "CMakeFiles/main.dir/src/TerminalMapRenderer.cpp.o"
-},
-{
-  "directory": "/Users/robinsilverhav/dev/cpp/AStar2023",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/robinsilverhav/dev/cpp/AStar2023/inc -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -o CMakeFiles/main.dir/src/getKey.cpp.o -c /Users/robinsilverhav/dev/cpp/AStar2023/src/getKey.cpp",
-  "file": "/Users/robinsilverhav/dev/cpp/AStar2023/src/getKey.cpp",
-  "output": "CMakeFiles/main.dir/src/getKey.cpp.o"
 }
 ]
