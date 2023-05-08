@@ -1,7 +1,5 @@
 #include "TerminalMapRenderer.h"
 #include <iostream>
-#include <memory>
-#include <string>
 #include <unordered_set>
 
 void TerminalMapRenderer::renderMap(const GameMap &gameMap,

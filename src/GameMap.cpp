@@ -1,6 +1,4 @@
 #include "GameMap.h"
-#include <memory>
-#include <stdexcept>
 
 GameMap::GameMap(int _width, int _height) : width(_width), height(_height) {
   for (int y = 0; y < height; y++) {

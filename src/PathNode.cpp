@@ -1,5 +1,4 @@
 #include "PathNode.h"
-#include <string>
 
 PathNode::PathNode(Point _point, float _estimatedDistance)
     : Point(_point.x, _point.y), estimatedDistance(_estimatedDistance) {}
