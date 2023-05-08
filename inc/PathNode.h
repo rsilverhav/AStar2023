@@ -7,8 +7,9 @@
 class PathNode : public Point {
 public:
   float distanceStart;
+  float estimatedDistance;
   std::shared_ptr<PathNode> previousNode;
-  PathNode(Point, float);
-  PathNode(Point, float, std::shared_ptr<PathNode>);
+  PathNode(Point, float, float);
+  PathNode(Point, float, float, std::shared_ptr<PathNode>);
 };
 #endif

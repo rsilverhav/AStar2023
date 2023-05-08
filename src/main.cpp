@@ -1,7 +1,9 @@
 #include "GameMap.h"
 #include "MapRenderer.h"
 #include "PathFinder.h"
+#include "Point.h"
 #include "TerminalMapRenderer.h"
+#include <cmath>
 
 const int width = 10;
 const int height = 10;

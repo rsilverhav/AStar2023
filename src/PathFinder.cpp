@@ -1,6 +1,5 @@
 #include "PathFinder.h"
 #include "GameMap.h"
-#include <iostream>
 #include <memory>
 #include <queue>
 #include <unordered_set>
@@ -14,10 +13,12 @@ std::shared_ptr<PathNode> PathFinder::findShortestPath(const Point &from,
                                                        const GameMap &gameMap) {
 
   auto startNode =
-      std::shared_ptr<PathNode>(new PathNode({from.x, from.y}, 0.0f));
+      std::shared_ptr<PathNode>(new PathNode({from.x, from.y}, 0.0f, 0.0f));
 
   auto cmp = [](std::shared_ptr<PathNode> left,
-                std::shared_ptr<PathNode> right) { return left->x < right->x; };
+                std::shared_ptr<PathNode> right) {
+    return left->estimatedDistance > right->estimatedDistance;
+  };
 
   std::priority_queue<std::shared_ptr<PathNode>,
                       std::vector<std::shared_ptr<PathNode>>, decltype(cmp)>
@@ -43,7 +44,8 @@ std::shared_ptr<PathNode> PathFinder::findShortestPath(const Point &from,
       if (mapTileType == MapTileType::floor &&
           visited.find(adjacent) == visited.end()) {
         queue.push(std::shared_ptr<PathNode>(
-            new PathNode({adjacent.x, adjacent.y}, 0.0f, current)));
+            new PathNode({adjacent.x, adjacent.y}, from.getDistance(adjacent),
+                         to.getDistance(adjacent), current)));
       }
     }
   }

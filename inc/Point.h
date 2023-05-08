@@ -8,6 +8,8 @@ public:
   Point(int _x, int _y) : x(_x), y(_y) {}
   inline bool operator==(const Point &p) const { return x == p.x && y == p.y; };
   inline bool operator!=(const Point &p) const { return !(*this == p); };
+
+  float getDistance(const Point &) const;
 };
 
 template <> struct std::hash<Point> {
