@@ -20,8 +20,17 @@ int main() {
   std::unique_ptr<MapRenderer> mapRenderer =
       std::make_unique<TerminalMapRenderer>();
 
-  PathFinder pathFinder{};
+  auto manhattanDistance = [](Point point) {
+    std::vector<Point> adjacentPoints{};
+    adjacentPoints.push_back({point.x + 1, point.y});
+    adjacentPoints.push_back({point.x - 1, point.y});
+    adjacentPoints.push_back({point.x, point.y + 1});
+    adjacentPoints.push_back({point.x, point.y - 1});
+    return adjacentPoints;
+  };
 
-  auto path = pathFinder.findShortestPath({1, 3}, {6, 4});
+  PathFinder pathFinder{manhattanDistance};
+
+  auto path = pathFinder.findShortestPath({1, 3}, {6, 4}, gameMap);
   mapRenderer->renderMap(gameMap, path);
 }
