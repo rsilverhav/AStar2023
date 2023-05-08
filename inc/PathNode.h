@@ -11,5 +11,7 @@ public:
   std::shared_ptr<PathNode> previousNode;
   PathNode(Point, float, float);
   PathNode(Point, float, float, std::shared_ptr<PathNode>);
+
+  void printDistanceFromStart();
 };
 #endif

@@ -58,6 +58,7 @@ int main() {
 
     auto path = pathFinder.findShortestPath(from, to, gameMap);
     mapRenderer->renderMap(gameMap, path);
+    path->printDistanceFromStart();
   }
   {
     std::cout << "\nManhattan\n";
@@ -65,5 +66,6 @@ int main() {
 
     auto path = pathFinder.findShortestPath(from, to, gameMap);
     mapRenderer->renderMap(gameMap, path);
+    path->printDistanceFromStart();
   }
 }
