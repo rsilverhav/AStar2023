@@ -7,7 +7,7 @@
 #include <unordered_set>
 
 void TerminalMapRenderer::renderMap(const GameMap &gameMap,
-                                    std::shared_ptr<PathNode> path) {
+                                    std::shared_ptr<PathNode> path) const {
 
   std::unordered_set<std::string> pathNodes;
   auto currentNode = path;

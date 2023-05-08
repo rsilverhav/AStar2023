@@ -9,7 +9,7 @@ class MapRenderer {
 public:
   virtual ~MapRenderer() = default;
   virtual void renderMap(const GameMap &gameMap,
-                         std::shared_ptr<PathNode> path) = 0;
+                         std::shared_ptr<PathNode> path) const = 0;
 };
 
 #endif

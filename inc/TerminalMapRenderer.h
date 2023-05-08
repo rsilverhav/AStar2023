@@ -12,7 +12,7 @@ public:
   TerminalMapRenderer(){};
 
   void renderMap(const GameMap &gameMap,
-                 std::shared_ptr<PathNode> path) override;
+                 std::shared_ptr<PathNode> path) const override;
 };
 
 #endif
