@@ -42,8 +42,21 @@ int main() {
     return adjacentPoints;
   };
 
-  PathFinder pathFinder{euclideanDistance};
+  Point from{1, 3};
+  Point to{6, 4};
 
-  auto path = pathFinder.findShortestPath({1, 3}, {6, 4}, gameMap);
-  mapRenderer->renderMap(gameMap, path);
+  {
+    std::cout << "\nEuclidean\n";
+    PathFinder pathFinder{euclideanDistance};
+
+    auto path = pathFinder.findShortestPath(from, to, gameMap);
+    mapRenderer->renderMap(gameMap, path);
+  }
+  {
+    std::cout << "\nManhattan\n";
+    PathFinder pathFinder{manhattanDistance};
+
+    auto path = pathFinder.findShortestPath(from, to, gameMap);
+    mapRenderer->renderMap(gameMap, path);
+  }
 }
