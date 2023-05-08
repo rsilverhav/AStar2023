@@ -1,6 +1,5 @@
 #include "TerminalMapRenderer.h"
-#include "GameMap.h"
-#include "PathNode.h"
+#include <iostream>
 #include <memory>
 #include <string>
 #include <unordered_set>
@@ -15,7 +14,7 @@ void TerminalMapRenderer::renderMap(const GameMap &gameMap,
   std::unordered_set<std::string> pathNodes;
   auto currentNode = path;
   do {
-    pathNodes.insert(getKey(currentNode->point.x, currentNode->point.y));
+    pathNodes.insert(getKey(currentNode->x, currentNode->y));
     currentNode = currentNode->previousNode;
   } while (currentNode);
 

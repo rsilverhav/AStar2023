@@ -4,9 +4,8 @@
 #include <memory>
 #include <string>
 
-class PathNode {
+class PathNode : public Point {
 public:
-  Point point;
   float distanceStart;
   std::shared_ptr<PathNode> previousNode;
   PathNode(Point, float);

@@ -4,7 +4,6 @@
 #include "GameMap.h"
 #include "MapRenderer.h"
 #include "PathNode.h"
-#include <iostream>
 #include <vector>
 
 class TerminalMapRenderer : public MapRenderer {
