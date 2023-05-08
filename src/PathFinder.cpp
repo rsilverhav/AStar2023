@@ -1,4 +1,5 @@
 #include "PathFinder.h"
+#include "GameMap.h"
 #include <iostream>
 #include <memory>
 #include <queue>
@@ -17,6 +18,7 @@ std::shared_ptr<PathNode> PathFinder::findShortestPath(const Point &from,
 
   auto cmp = [](std::shared_ptr<PathNode> left,
                 std::shared_ptr<PathNode> right) { return left->x < right->x; };
+
   std::priority_queue<std::shared_ptr<PathNode>,
                       std::vector<std::shared_ptr<PathNode>>, decltype(cmp)>
       queue(cmp);
@@ -27,12 +29,24 @@ std::shared_ptr<PathNode> PathFinder::findShortestPath(const Point &from,
 
   while (!queue.empty()) {
     auto current = queue.top();
-    std::cout << "Current: " << current->x << ", " << current->y << "\n";
     queue.pop();
+
+    if (*current == to) {
+      return current;
+    }
+
     visited.insert(*current);
+
+    auto adjacentPoints = this->getAdjacentPoints(*current);
+    for (auto adjacent : adjacentPoints) {
+      auto mapTileType = gameMap.getTileType(adjacent);
+      if (mapTileType == MapTileType::floor &&
+          visited.find(adjacent) == visited.end()) {
+        queue.push(std::shared_ptr<PathNode>(
+            new PathNode({adjacent.x, adjacent.y}, 0.0f, current)));
+      }
+    }
   }
 
-  auto adjacentPoints = this->getAdjacentPoints(from);
-
-  return startNode;
+  return nullptr;
 }

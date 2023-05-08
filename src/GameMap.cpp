@@ -1,6 +1,6 @@
 #include "GameMap.h"
-#include <__tuple>
 #include <memory>
+#include <stdexcept>
 
 GameMap::GameMap(int _width, int _height) : width(_width), height(_height) {
   for (int y = 0; y < height; y++) {
@@ -12,7 +12,11 @@ GameMap::GameMap(int _width, int _height) : width(_width), height(_height) {
 }
 
 MapTileType GameMap::getTileType(const Point &point) const {
-  return mapData.at(point.y).at(point.x);
+  try {
+    return mapData.at(point.y).at(point.x);
+  } catch (const std::out_of_range &e) {
+    return MapTileType::invalid;
+  }
 }
 
 void GameMap::setTileType(const Point &point, MapTileType tileType) {

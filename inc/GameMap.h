@@ -4,7 +4,7 @@
 #include "Point.h"
 #include <vector>
 
-enum class MapTileType { floor, wall };
+enum class MapTileType { floor, wall, invalid };
 
 class GameMap {
 private:

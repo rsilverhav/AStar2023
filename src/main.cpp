@@ -16,7 +16,7 @@ int main() {
   std::unique_ptr<MapRenderer> mapRenderer =
       std::make_unique<TerminalMapRenderer>();
 
-  auto manhattanDistance = [](Point point) {
+  auto manhattanDistance = [](const Point &point) {
     std::vector<Point> adjacentPoints{};
     adjacentPoints.push_back({point.x + 1, point.y});
     adjacentPoints.push_back({point.x - 1, point.y});

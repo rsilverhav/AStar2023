@@ -12,11 +12,13 @@ void TerminalMapRenderer::renderMap(const GameMap &gameMap,
   };
 
   std::unordered_set<std::string> pathNodes;
-  auto currentNode = path;
-  do {
-    pathNodes.insert(getKey(currentNode->x, currentNode->y));
-    currentNode = currentNode->previousNode;
-  } while (currentNode);
+  if (path) {
+    auto currentNode = path;
+    do {
+      pathNodes.insert(getKey(currentNode->x, currentNode->y));
+      currentNode = currentNode->previousNode;
+    } while (currentNode);
+  }
 
   for (int i = 0; i < gameMap.width + 2; i++) {
     std::cout << "-";
