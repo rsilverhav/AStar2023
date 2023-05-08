@@ -5,8 +5,8 @@
 TerminalMapRenderer::TerminalMapRenderer(std::unordered_map<Point, char> _marks)
     : marks(_marks) {}
 
-void TerminalMapRenderer::renderMap(const GameMap &gameMap,
-                                    std::shared_ptr<PathNode> path) const {
+void TerminalMapRenderer::renderMap(
+    const GameMap &gameMap, const std::shared_ptr<PathNode> path) const {
 
   auto getKey = [](int x, int y) {
     return std::to_string(x) + "," + std::to_string(y);

@@ -12,7 +12,7 @@ public:
   TerminalMapRenderer(std::unordered_map<Point, char>);
 
   void renderMap(const GameMap &gameMap,
-                 std::shared_ptr<PathNode> path) const override;
+                 const std::shared_ptr<PathNode> path) const override;
 
 private:
   std::unordered_map<Point, char> marks;
