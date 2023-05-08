@@ -2,6 +2,9 @@
 #include <iostream>
 #include <unordered_set>
 
+TerminalMapRenderer::TerminalMapRenderer(std::unordered_map<Point, char> _marks)
+    : marks(_marks) {}
+
 void TerminalMapRenderer::renderMap(const GameMap &gameMap,
                                     std::shared_ptr<PathNode> path) const {
 
@@ -27,7 +30,10 @@ void TerminalMapRenderer::renderMap(const GameMap &gameMap,
     std::cout << "|";
     for (int x = 0; x < gameMap.width; x++) {
       auto col = gameMap.getTileType({x, y});
-      if (pathNodes.find(getKey(x, y)) != pathNodes.end()) {
+      auto mark = marks.find({x, y});
+      if (mark != marks.end()) {
+        std::cout << mark->second;
+      } else if (pathNodes.find(getKey(x, y)) != pathNodes.end()) {
         std::cout << ".";
       } else if (col == MapTileType::wall) {
         std::cout << "#";

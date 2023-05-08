@@ -15,15 +15,18 @@ int main() {
   gameMap.setTileType({4, 3}, MapTileType::wall);
   gameMap.setTileType({5, 3}, MapTileType::wall);
   gameMap.setTileType({6, 3}, MapTileType::wall);
-  gameMap.setTileType({7, 3}, MapTileType::wall);
   gameMap.setTileType({3, 4}, MapTileType::wall);
   gameMap.setTileType({3, 5}, MapTileType::wall);
   gameMap.setTileType({4, 5}, MapTileType::wall);
   gameMap.setTileType({4, 6}, MapTileType::wall);
   gameMap.setTileType({5, 6}, MapTileType::wall);
 
+  Point from{1, 3};
+  Point to{6, 4};
+
   std::unique_ptr<MapRenderer> mapRenderer =
-      std::make_unique<TerminalMapRenderer>();
+      std::unique_ptr<TerminalMapRenderer>(
+          new TerminalMapRenderer({{from, 's'}, {to, 'e'}}));
 
   auto manhattanDistance = [](const Point &point) {
     std::vector<Point> adjacentPoints{};
@@ -48,9 +51,6 @@ int main() {
     }
     return adjacentPoints;
   };
-
-  Point from{1, 3};
-  Point to{6, 4};
 
   {
     std::cout << "\nEuclidean\n";
