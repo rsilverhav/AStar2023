@@ -3,6 +3,7 @@
 #include "PathFinder.h"
 #include "Point.h"
 #include "TerminalMapRenderer.h"
+#include <iostream>
 
 const int width = 10;
 const int height = 10;
@@ -19,14 +20,29 @@ int main() {
 
   auto manhattanDistance = [](const Point &point) {
     std::vector<Point> adjacentPoints{};
-    adjacentPoints.push_back({point.x + 1, point.y});
-    adjacentPoints.push_back({point.x - 1, point.y});
-    adjacentPoints.push_back({point.x, point.y + 1});
-    adjacentPoints.push_back({point.x, point.y - 1});
+    for (int dy = -1; dy <= 1; dy += 2) {
+      adjacentPoints.push_back({point.x, point.y + dy});
+    }
+    for (int dx = -1; dx <= 1; dx += 2) {
+      adjacentPoints.push_back({point.x + dx, point.y});
+    }
     return adjacentPoints;
   };
 
-  PathFinder pathFinder{manhattanDistance};
+  auto euclideanDistance = [manhattanDistance](const Point &point) {
+    std::vector<Point> adjacentPoints{};
+    for (int dy = -1; dy <= 1; dy += 1) {
+      for (int dx = -1; dx <= 1; dx += 1) {
+        if (dx == 0 && dy == 0) {
+          continue;
+        }
+        adjacentPoints.push_back({point.x + dx, point.y + dy});
+      }
+    }
+    return adjacentPoints;
+  };
+
+  PathFinder pathFinder{euclideanDistance};
 
   auto path = pathFinder.findShortestPath({1, 3}, {6, 4}, gameMap);
   mapRenderer->renderMap(gameMap, path);
