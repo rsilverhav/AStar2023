@@ -1,4 +1,5 @@
 #include "GameMap.h"
+#include "MapLoader.h"
 #include "MapRenderer.h"
 #include "PathFinder.h"
 #include "Point.h"
@@ -10,10 +11,10 @@ const int height = 10;
 
 int main() {
 
-  auto gameMap = GameMap("./maps/1.mapdata");
+  MapLoader loader;
+  auto [mapData, from, to] = loader.loadMap("./maps/1.mapdata");
 
-  Point from{1, 3};
-  Point to{6, 4};
+  auto gameMap = GameMap(mapData);
 
   std::unique_ptr<MapRenderer> mapRenderer =
       std::unique_ptr<TerminalMapRenderer>(

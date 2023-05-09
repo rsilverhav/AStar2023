@@ -209,6 +209,30 @@ src/GameMap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/GameMap.cpp.s
 .PHONY : src/GameMap.cpp.s
 
+src/MapLoader.o: src/MapLoader.cpp.o
+.PHONY : src/MapLoader.o
+
+# target to build an object file
+src/MapLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/MapLoader.cpp.o
+.PHONY : src/MapLoader.cpp.o
+
+src/MapLoader.i: src/MapLoader.cpp.i
+.PHONY : src/MapLoader.i
+
+# target to preprocess a source file
+src/MapLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/MapLoader.cpp.i
+.PHONY : src/MapLoader.cpp.i
+
+src/MapLoader.s: src/MapLoader.cpp.s
+.PHONY : src/MapLoader.s
+
+# target to generate assembly for a file
+src/MapLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/MapLoader.cpp.s
+.PHONY : src/MapLoader.cpp.s
+
 src/PathFinder.o: src/PathFinder.cpp.o
 .PHONY : src/PathFinder.o
 
@@ -346,6 +370,9 @@ help:
 	@echo "... src/GameMap.o"
 	@echo "... src/GameMap.i"
 	@echo "... src/GameMap.s"
+	@echo "... src/MapLoader.o"
+	@echo "... src/MapLoader.i"
+	@echo "... src/MapLoader.s"
 	@echo "... src/PathFinder.o"
 	@echo "... src/PathFinder.i"
 	@echo "... src/PathFinder.s"
