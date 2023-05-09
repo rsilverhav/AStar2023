@@ -9,14 +9,14 @@
 #include <vector>
 
 class PathFinder {
-private:
-  std::function<std::vector<Point>(Point)> getAdjacentPoints;
-
 public:
   PathFinder(std::function<std::vector<Point>(Point)> _getAdjacentPoints);
 
   std::shared_ptr<PathNode> findShortestPath(const Point &from, const Point &to,
                                              const GameMap &gameMap);
+
+private:
+  std::function<std::vector<Point>(Point)> getAdjacentPoints;
 };
 
 #endif
