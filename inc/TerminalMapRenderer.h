@@ -9,7 +9,7 @@
 
 class TerminalMapRenderer : public MapRenderer {
 public:
-  TerminalMapRenderer(std::unordered_map<Point, char>);
+  TerminalMapRenderer(std::unordered_map<Point, char> _marks);
 
   void renderMap(const GameMap &gameMap,
                  const std::shared_ptr<PathNode> path) const override;

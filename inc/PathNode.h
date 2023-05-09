@@ -9,8 +9,9 @@ public:
   float distanceFromStart;
   float estimatedDistance;
   std::shared_ptr<PathNode> previousNode;
-  PathNode(Point, float, float);
-  PathNode(Point, float, float, std::shared_ptr<PathNode>);
+  PathNode(Point _point, float _distanceFromStart, float _estimatedDistance);
+  PathNode(Point _point, float _distanceFromStart, float _estimatedDistance,
+           std::shared_ptr<PathNode>);
 
   void printDistanceFromStart();
 };

@@ -9,7 +9,7 @@ public:
   inline bool operator==(const Point &p) const { return x == p.x && y == p.y; };
   inline bool operator!=(const Point &p) const { return !(*this == p); };
 
-  float getDistance(const Point &) const;
+  float getDistance(const Point &point) const;
 };
 
 template <> struct std::hash<Point> {
