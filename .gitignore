@@ -6,3 +6,4 @@ CTestTestfile.cmake
 cmake_install.cmake
 .run.sh
 .cache/
+.vscode
